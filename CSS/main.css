@@ -316,20 +316,24 @@ background-color: #4c5580;
 .cube:nth-child(4) {
   top: 50%;
   left: 50%;
-  animation-delay: 150ms;
+  animation-delay: 100ms;
 }
 
 .cube:nth-child(5) {
     top: 100%;
     left: 50%;
-    animation-delay: 150ms;
+    animation-delay: 200ms;
   }
   .cube:nth-child(6) {
     top: 100%;
     left: 100%;
-    animation-delay: 150ms;
+    animation-delay: 200ms;
   }
-
+  .cube:nth-child(7) {
+    top: 50%;
+    left: 100%;
+    animation-delay: 250ms;
+  }
 
 @keyframes cube {
   0%, 75%, 100% {

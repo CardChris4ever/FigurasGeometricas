@@ -105,10 +105,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="side"></div>
       <div class="side"></div>
     </div>
+    <div class="cube">
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+    </div>
   </div>
 </div>
 
-  <button class="modal-trigger">Sign Up</button>
+  <button class="modal-trigger">Registrar</button>
   <div class="modal-overlay">
     <div class="modal-content">
       <form method="POST" class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -117,16 +125,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input name="password" type="password" id="password" placeholder="Password" class="form--input">
         <input name="confirm_password" type="password" id="confirm_password" placeholder="Confirm password"
           class="form--input">
-        <!-- <div class="form--marketing">
-          <input id="okayToEmail" type="checkbox">
-          <label for="okayToEmail" class="checkbox"> I want to join the newsletter </label>
-        </div> -->
-        <button class="form--submit" type="submit">ENVIAR</button>
+
+        <button class="form--submit" type="submit">Registrar</button>
+
       </form>
     </div>
   </div>
 
+  <button class="modal-trigger2">Iniciar sesion</button>
+  <div class="modal-overlay2">
+    <div class="modal-content2">
+      <form method="POST" class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <span class="signup">Sign Up</span>
+        <input name="username" type="email" id="username2" placeholder="Nombre de usuario" class="form--input">
+        <input name="password" type="password" id="password2" placeholder="Password" class="form--input">
+        <button class="form--submit form--submit2" type="submit">Iniciar Sesion</button>
 
+      </form>
+    </div>
+  </div>
+  
   <footer>
 
   </footer>
@@ -135,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </html>
 
 <script>
-
+// Boton Registrar
   var modalOverlay = document.querySelector('.modal-overlay');
   var signUpButton = document.querySelector('.form--submit');
   var closeButton = document.createElement('span');
@@ -144,6 +162,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   modalOverlay.appendChild(closeButton);
 
   var modalTrigger = document.querySelector('.modal-trigger');
+  modalTrigger.addEventListener('click', function () {
+    modalOverlay.style.display = 'block';
+  });
+
+  closeButton.addEventListener('click', function () {
+    modalOverlay.style.display = 'none';
+  });
+
+  modalOverlay.addEventListener('click', function (event) {
+    if (event.target == modalOverlay) {
+      modalOverlay.style.display = 'none';
+    }
+  });
+
+// Boton Iniciar Sesion
+  var modalOverlay = document.querySelector('.modal-overlay2');
+  var signUpButton = document.querySelector('.form--submit2');
+  var closeButton = document.createElement('span');
+  closeButton.innerHTML = '&times;';
+  closeButton.classList.add('modal-close');
+  modalOverlay.appendChild(closeButton);
+
+  var modalTrigger = document.querySelector('.modal-trigger2');
   modalTrigger.addEventListener('click', function () {
     modalOverlay.style.display = 'block';
   });
